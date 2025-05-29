@@ -11,8 +11,12 @@ import { SITE_TITLE } from '../consts';
     <div class="internal-links">
         <HeaderLink href="/">Home</HeaderLink>
         <HeaderLink href="/blog">Blog</HeaderLink>
-        <HeaderLink href="/about">About</HeaderLink>
+        <HeaderLink href="/about">Sobre nosotros</HeaderLink>
+		<HeaderLink href="/contact">Contacto</HeaderLink>
     </div>
+    <button id="theme-toggle" aria-label="Cambiar modo" class="theme-toggle">
+        <span id="theme-icon">🌙</span>
+    </button>
 	</nav>
 </header>
 <style>
@@ -76,4 +80,40 @@ import { SITE_TITLE } from '../consts';
 			display: none;
 		}
 	}
+
+	.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 1em;
+    display: flex;
+    align-items: center;
+    color: var(--black);
+    font-size: 1.5em;
+}
+.theme-toggle:focus {
+    outline: 2px solid var(--accent);
+}
+:root {
+    --black: 30, 30, 30;
+    --white: 255, 255, 255;
+    --accent: #0077ff;
+    --footer-bg: #f5f5f5;
+    --footer-text: #222;
+}
+
+[data-theme="dark"] {
+    --black: 255, 255, 255;
+    --white: 30, 30, 30;
+    --accent: #ffd600;
+    --footer-bg: #181818;
+    --footer-text: #eee;
+    background: #23272f; /* Fondo gris oscuro para el body */
+}
+
+body {
+    background: rgb(var(--white));
+    color: rgb(var(--black));
+    transition: background 0.2s, color 0.2s;
+}
 </style>

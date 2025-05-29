@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+    <main>
+        <h1>Contacto</h1>
+        <p>
+            Si tienes alguna duda, sugerencia o quieres registrar tu centro educativo, puedes ponerte en contacto con nosotros a través del siguiente formulario.
+        </p>
+        <form action="https://formspree.io/f/xrbkzzoy" method="POST">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="_replyto" required>
+
+            <label for="message">Mensaje:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </main>
